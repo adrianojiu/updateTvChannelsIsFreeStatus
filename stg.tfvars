@@ -1,0 +1,14 @@
+function_name        = "updateTvChannelsIsFreeStatus"
+function_runtime     = "nodejs14.x"
+function_memory_size = 128
+function_timeout     = 60
+function_schedule    = "rate(5 minutes)"
+function_description = "Lambda function responsible for updating the channels.json config from ClaroTVmais BFF application with the channels that are free at the moment of the function call."
+log_retention        = 1
+vpc_id               = "vpc-05d99cd2893ce7a8d"
+lambda_subnets       = ["subnet-049445d131f1beeaa", "subnet-0e2966ac7a67b1ad4"]
+webportal_address    = "https://webportal.nowonlinedev.clarobrasil.mobi"
+region               = "us-east-2"
+config_s3_key        = "now-be/config/content/channels.json"
+api_key_bff          = "APIKey 767875fb-83c7-42aa-9465-a5956b58b357"
+servicetag           = "avsclient"

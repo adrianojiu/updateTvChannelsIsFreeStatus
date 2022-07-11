@@ -1,0 +1,14 @@
+function_name        = "updateTvChannelsIsFreeStatus"
+function_runtime     = "nodejs14.x"
+function_memory_size = 128
+function_timeout     = 60
+function_schedule    = "rate(5 minutes)"
+function_description = "Lambda function responsible for updating the channels.json config from NOW Online BFF application with the channels that are free at the moment of the function call."
+log_retention        = 1
+vpc_id               = "vpc-03f684126fd94217b"
+lambda_subnets       = ["subnet-0432c3ad9d05c1a14", "subnet-0570c9d64712a88fe"]
+webportal_address    = "https://webportal.nowonlinecloud.clarobrasil.mobi"
+region               = "sa-east-1"
+config_s3_key        = "now-be/config/content/channels.json"
+api_key_bff          = "APIKey 767875fb-83c7-42aa-9465-a5956b58b357"
+servicetag           = "avsclient"
