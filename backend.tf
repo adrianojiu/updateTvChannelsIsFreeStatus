@@ -1,24 +1,24 @@
-# Backend state file remote location.
+# Local remoto do arquivo de estado de back-end.
 terraform {
   backend "s3" {
-    bucket = "tf-files-infra-base-test-lab" # Set bucket.
+    bucket = "terraform-tfstate-clarotvmais"
     #dynamodb_table = "terraform-state-lock-dynamo-lab-infra"          # Set table if you want to manage lock for yor operations in Terraform.
-    key     = "test-UpdateTvChannels/lab-infra-base.tfstate" # Set file key.
-    region  = "us-east-1"
+    key     = "updateTvChannelsIsFreeStatus/updateTvChannelsIsFreeStatus.tfstate" # Caso tenha mais de um workspace o arquivo sera armazenado na pasta do workspace que sera criada nesta mesma.
+    region  = "sa-east-1"
     encrypt = true
-    profile = "1"
+    profile = "prd-now"
   }
 }
 
-# Uncomment below to create table to manage terraform locking operations, and change in backend config.
-# DynammoDB terraform for state locking.
+# Descomente abaixo para criar uma tabela para gerenciar state locking do terraform e altere a configuração do backend acima.
+# Terraform do DynammoDB para bloqueio de estado.
 /*
 resource "aws_dynamodb_table" "dynamo-db-terraform-state-lock" {
-  name           = "terraform-state-lock-dynamo-lab-infra"
+  name           = "terraform-tfstate-clarotvmais"
   hash_key       = "LockID"
   read_capacity  = 20
   write_capacity = 20
-  provider       = aws.us_east_1
+  provider       = aws
 
   attribute {
     name = "LockID"
