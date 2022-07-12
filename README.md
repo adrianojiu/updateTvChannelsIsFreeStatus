@@ -37,19 +37,22 @@ O deploy(exeto na criação do ambiente) da aplicação não é feito pelo terra
 ## Preprod
 Criação de plano para aplicar a configuração em preprod:
 
-terraform plan -out=stg-plan -var-file=stg.tfvars
+* **terraform plan -out=stg-plan -var-file=stg.tfvars**
 
-Aplicando o plano acima em pré produção :
-terraform apply stg-plan
+Aplicando o plano acima em pré produção:
+
+* **terraform apply stg-plan**
 
 -----------------
 
 ## Prod
 Criação de plano para aplicar a configuração em prod:
-terraform plan -out=prod-plan -var-file=prod.tfvars
+
+* **terraform plan -out=prod-plan -var-file=prod.tfvars**
 
 Aplicando o plano acima em produção:
-terraform apply prod-plan
+
+* **terraform apply prod-plan**
 
 
 
