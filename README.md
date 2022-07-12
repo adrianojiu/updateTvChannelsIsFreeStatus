@@ -43,6 +43,13 @@ Aplicando o plano acima em pré produção:
 
 * **terraform apply stg-plan**
 
+!!!Para destruir o ambiente:!!!
+
+terraform destroy -var-file=stg.tfvars
+
+Cuidado o comando acima destroy todo o ambiente criado pelo terraform. Só use se quiser realmente remover todos os recursos do projeto.
+
+
 -----------------
 
 ## Prod
@@ -54,6 +61,80 @@ Aplicando o plano acima em produção:
 
 * **terraform apply prod-plan**
 
+!!!Para destruir o ambiente:!!!
+
+* **terraform destroy -var-file=prod.tfvars**
+
+Cuidado o comando acima destroy todo o ambiente criado pelo terraform. Só use se quiser realmente remover todos os recursos do projeto.
+
+# Variaveis
+
+### "region"
+É a região AWS onde o projeto deve rodar ou esta rodando. Deve ser setado no arquivo .tfvars.
+type = string
+
+### "aws_local_profile"
+É o perfil local AWS que será usado para acessar a conta AWS, ele é solicitado toda vez que é executado o plan apply ou destroy.
+type = string
+
+### "function_name"
+É o nome da função lamba que o projeto deve subir ou gerenciar. Deve ser setado no arquivo .tfvars.
+type = string
+
+### "webportal_address"
+É o endereço do webportal do Claro TV+. Deve ser setado no arquivo .tfvars.
+type = string
+
+### "vpc_id"
+É o ip da VPC onde a aplicação esta rodando. Deve ser setado no arquivo .tfvars.
+type = string
+
+### "lambda_subnets"
+São as subnets onde a função lambda deve rodar. Deve ser setado no arquivo .tfvars.
+type = list(string)
+
+### "config_s3_key"
+É o caminho do arquivo de configuração usado como variavel de ambiente pela função lambda. Deve ser setado no arquivo .tfvars.
+type = string
+
+### "api_key_bff"
+É a chave de api usada para a função se conectar no bff/avsclient é usado como variavel de ambiente pela função. Deve ser setado no arquivo .tfvars.
+type = string
+
+### "function_description"
+É a descrição da função lambda. Deve ser setado no arquivo .tfvars.
+type = string
+
+### "function_runtime"
+É o Runtime definido para execução da função/aplicação lambda. Deve ser setado no arquivo .tfvars.
+type = string
+
+### "function_memory_size"
+É o tamanho da memoria em mega bytes que será usado pela funç~~ao na sua execução. Deve ser setado no arquivo .tfvars.
+type = number
+
+### "function_timeout"
+Tempo maximo permitido de execução da função lambda. Deve ser setado no arquivo .tfvars.
+type = number
+
+### "function_schedule"
+O tempo que a função será invocada. Deve ser setado no arquivo .tfvars.
+type = string
+
+### "servicetag"
+É o nome do serviço ao qual esta função pertence. Deve ser setado no arquivo .tfvars.
+type = string
+
+### "log_retention"
+É o tempo em dias que o Cloudwatch irá manter os logs de execução da função. Deve ser setado no arquivo .tfvars.
+type = number
+
+### "function_version"
+É a versão atual em que a aplicação esta rodando na versão, isso é importante para uma execução de apply/plan não seja setado o valo $LATEST no alias da função. É necessario pegar qual a versão esta sendo usada atualmente e inserir no momento da execução do apply/plan. Esta variavel é solicitada na execuçãod e um apply/plan.
+type = string
+
+-----------------
+-----------------
 -----------------
 -----------------
 ![Terraform](/assets/terraform-vertical-color.png)
