@@ -119,14 +119,17 @@ type = number
 
 ### "function_schedule"
 O tempo que a função será invocada. Deve ser setado no arquivo .tfvars.
+<br>
 type = string
 
 ### "servicetag"
 É o nome do serviço ao qual esta função pertence. Deve ser setado no arquivo .tfvars.
+<br>
 type = string
 
 ### "log_retention"
 É o tempo em dias que o Cloudwatch irá manter os logs de execução da função. Deve ser setado no arquivo .tfvars.
+<br>
 type = number
 
 ### "function_version"
