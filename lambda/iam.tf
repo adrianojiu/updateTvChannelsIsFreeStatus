@@ -1,5 +1,5 @@
 # Allow lambda function call ssm parameters.
-resource "aws_iam_policy" "lambda_test_UpdateTvChannels_ssm" {
+resource "aws_iam_policy" "lambda_UpdateTvChannels_ssm" {
   name        = "${var.function_name}-ssm-${terraform.workspace}"
   path        = "/"
   description = "Used to lambda function calls ssm parameters."
@@ -33,7 +33,7 @@ resource "aws_iam_policy" "lambda_test_UpdateTvChannels_ssm" {
 }
 
 # Role creation wich lambda function will use to access other resourcesa.
-resource "aws_iam_role" "lambda_test-UpdateTvChannels" {
+resource "aws_iam_role" "lambda_UpdateTvChannels" {
     name = "${var.function_name}-${terraform.workspace}"
     assume_role_policy = <<EOF
 {
@@ -50,7 +50,7 @@ resource "aws_iam_role" "lambda_test-UpdateTvChannels" {
 }
 EOF
 depends_on = [
-  aws_iam_policy.lambda_test_UpdateTvChannels_ssm
+  aws_iam_policy.lambda_UpdateTvChannels_ssm
 ]
 
       tags = {
@@ -63,20 +63,20 @@ depends_on = [
 
 # Attach policy in role created above.
 resource "aws_iam_role_policy_attachment" "AWSLambdaVPCAccessExecutionRole" {
-  role       = aws_iam_role.lambda_test-UpdateTvChannels.name
+  role       = aws_iam_role.lambda_UpdateTvChannels.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"
   
   depends_on = [
-    aws_iam_role.lambda_test-UpdateTvChannels
+    aws_iam_role.lambda_UpdateTvChannels
   ]
  }
 
 # Attach policy in role created above.
-resource "aws_iam_role_policy_attachment" "lambda_test_UpdateTvChannels_ssm_policy" {
-  role       = aws_iam_role.lambda_test-UpdateTvChannels.name
-  policy_arn = aws_iam_policy.lambda_test_UpdateTvChannels_ssm.arn
+resource "aws_iam_role_policy_attachment" "lambda_UpdateTvChannels_ssm_policy" {
+  role       = aws_iam_role.lambda_UpdateTvChannels.name
+  policy_arn = aws_iam_policy.lambda_UpdateTvChannels_ssm.arn
   
   depends_on = [
-    aws_iam_role.lambda_test-UpdateTvChannels
+    aws_iam_role.lambda_UpdateTvChannels
   ]
  }

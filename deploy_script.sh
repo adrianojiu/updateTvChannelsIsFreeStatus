@@ -2,7 +2,7 @@
 
 # Example of execution:
 #                               Argumentos: aws profile / function name / git branch / nodejs version / aws region / alias
-# ./deploy-updatetvchannelsisfreestatus.sh dev-now updateTvChannelsIsFreeStatus develop 14 us-east-1 stg
+# ./deploy_script.sh dev-now updateTvChannelsIsFreeStatus develop 14 us-east-1 stg >> deploy-log.txt
 # Git clone vai solicitar usuario e senha.
 
 git clone https://gitdev.clarobrasil.mobi/produtos-digitais/now-online/now-bff/updatetvchannelsisfreestatus.git

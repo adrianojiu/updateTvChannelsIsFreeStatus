@@ -23,6 +23,5 @@ output "cloudwatch_logs_retention" {
   value = aws_cloudwatch_log_group.lambda_logs.retention_in_days
 }
 output "lambda_security_group" {
-  #value = module.aws_security_group.lambda_allowed.tags.Name
   value = "${lookup(aws_security_group.lambda_allowed.tags, "Name")}"
 }

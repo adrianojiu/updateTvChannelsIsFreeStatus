@@ -3,7 +3,7 @@ resource "aws_lambda_function" "UpdateTvChannels_lambda" {
   # path.module in the filename.
   filename      = "update_tv_channels_is_free_status.zip"
   function_name = "${var.function_name}"
-  role          = aws_iam_role.lambda_test-UpdateTvChannels.arn
+  role          = aws_iam_role.lambda_UpdateTvChannels.arn
   handler       = "index.handler"
   memory_size = "${var.function_memory_size}"
   timeout     = "${var.function_timeout}"
@@ -36,7 +36,7 @@ resource "aws_lambda_function" "UpdateTvChannels_lambda" {
     }
 
   depends_on = [
-    aws_iam_role.lambda_test-UpdateTvChannels,
+    aws_iam_role.lambda_UpdateTvChannels,
     aws_ssm_parameter.secret
   ]
 }
