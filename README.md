@@ -71,50 +71,62 @@ Cuidado o comando acima destroy todo o ambiente criado pelo terraform. Só use s
 
 ### "region"
 É a região AWS onde o projeto deve rodar ou esta rodando. Deve ser setado no arquivo .tfvars.
+<br>
 type = string
 
 ### "aws_local_profile"
 É o perfil local AWS que será usado para acessar a conta AWS, ele é solicitado toda vez que é executado o plan apply ou destroy.
+<br>
 type = string
 
 ### "function_name"
 É o nome da função lamba que o projeto deve subir ou gerenciar. Deve ser setado no arquivo .tfvars.
+<br>
 type = string
 
 ### "webportal_address"
 É o endereço do webportal do Claro TV+. Deve ser setado no arquivo .tfvars.
+<br>
 type = string
 
 ### "vpc_id"
 É o ip da VPC onde a aplicação esta rodando. Deve ser setado no arquivo .tfvars.
+<br>
 type = string
 
 ### "lambda_subnets"
 São as subnets onde a função lambda deve rodar. Deve ser setado no arquivo .tfvars.
+<br>
 type = list(string)
 
 ### "config_s3_key"
 É o caminho do arquivo de configuração usado como variavel de ambiente pela função lambda. Deve ser setado no arquivo .tfvars.
+<br>
 type = string
 
 ### "api_key_bff"
 É a chave de api usada para a função se conectar no bff/avsclient é usado como variavel de ambiente pela função. Deve ser setado no arquivo .tfvars.
+<br>
 type = string
 
 ### "function_description"
 É a descrição da função lambda. Deve ser setado no arquivo .tfvars.
+<br>
 type = string
 
 ### "function_runtime"
 É o Runtime definido para execução da função/aplicação lambda. Deve ser setado no arquivo .tfvars.
+<br>
 type = string
 
 ### "function_memory_size"
 É o tamanho da memoria em mega bytes que será usado pela funç~~ao na sua execução. Deve ser setado no arquivo .tfvars.
+<br>
 type = number
 
 ### "function_timeout"
 Tempo maximo permitido de execução da função lambda. Deve ser setado no arquivo .tfvars.
+<br>
 type = number
 
 ### "function_schedule"
