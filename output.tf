@@ -25,4 +25,3 @@ output "cloudwatch_logs_retention" {
 output "lambda_security_group" {
   value = module.lambda.lambda_security_group
 }
-
