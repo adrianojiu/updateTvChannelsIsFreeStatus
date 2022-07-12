@@ -35,7 +35,8 @@ O deploy(exeto na criação do ambiente) da aplicação não é feito pelo terra
 
 # Exemplo de execução
 ## Preprod
-Criação de plano para aplicar a configuração em preprod:&nbsp;
+Criação de plano para aplicar a configuração em preprod:
+
 terraform plan -out=stg-plan -var-file=stg.tfvars
 
 Aplicando o plano acima em pré produção :
