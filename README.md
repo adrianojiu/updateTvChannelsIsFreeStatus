@@ -19,6 +19,10 @@ Verificar outputs no arquivo .output.tf.
 stg.tfvars --> Arquivo de definições de variaveis para workspace/ambiente de staging(stg)/preprod.
 prod.tfvars --> Arquivo de definições de variaveis para workspace/ambiente de produção(prd)/prod.
 
+# Workspaces
+stg - Este é o workspace para o ambiente de dev-now/staging/stg/preprod.
+prd - Este é o workspace para o ambiente de prd-now/produção/prd/prod.
+
 # inicial deploy
 Arquivo "update_tv_channels_is_free_status.zip" usado par ao primeiro deploy do ambiente.
 
@@ -28,3 +32,21 @@ O modulo cria o alias da aplicação baseado no nome workspace, ex: stg ou prd.
 
 # Deploy de aplicação
 O deploy(exeto na criação do ambiente) da aplicação não é feito pelo terraform, isso deve ser feito pelo script "deploy_script.sh" exemplo de execução e argumentos deste script estão em comentartio no proprio script.
+
+# Exemplo de execução
+Criação de plano para aplicar a configuração em preprod:
+terraform plan -out=stg-plan -var-file=stg.tfvars
+
+Aplicando o plano acima em pré produção :
+terraform apply stg-plan
+
+-----------------
+
+Criação de plano para aplicar a configuração em prod:
+terraform plan -out=prod-plan -var-file=prod.tfvars
+
+Aplicando o plano acima em produção:
+terraform apply prod-plan
+
+
+
