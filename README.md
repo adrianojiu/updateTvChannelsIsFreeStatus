@@ -131,6 +131,7 @@ type = number
 
 ### "function_version"
 É a versão atual em que a aplicação esta rodando na versão, isso é importante para uma execução de apply/plan não seja setado o valo $LATEST no alias da função. É necessario pegar qual a versão esta sendo usada atualmente e inserir no momento da execução do apply/plan. Esta variavel é solicitada na execuçãod e um apply/plan.
+<br>
 type = string
 
 -----------------
