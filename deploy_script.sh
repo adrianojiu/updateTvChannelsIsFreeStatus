@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Example of execution:
-#                               Arguments: aws profile / function name / git branch / nodejs version / aws region / alias
+#                               Argumentos: aws profile / function name / git branch / nodejs version / aws region / alias
 # ./deploy-updatetvchannelsisfreestatus.sh dev-now updateTvChannelsIsFreeStatus develop 14 us-east-1 stg
-# Git clone will request username and password.
+# Git clone vai solicitar usuario e senha.
 
 git clone https://gitdev.clarobrasil.mobi/produtos-digitais/now-online/now-bff/updatetvchannelsisfreestatus.git
 

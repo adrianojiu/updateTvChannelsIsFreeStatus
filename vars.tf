@@ -13,4 +13,4 @@ variable "function_timeout" {}
 variable "function_schedule" {}
 variable "servicetag"{}
 variable "log_retention"{}
-variable "function_version"{} # You must get the current version number which is running on the function if you don´t $LATEST will be setted up in this variable consequently in alias, be carefull.
+variable "function_version"{} # Você deve obter o número da versão atual que está sendo executada na função, caso contrário, $LATEST será configurado nesta variável consequentemente no alias, cuidado.
