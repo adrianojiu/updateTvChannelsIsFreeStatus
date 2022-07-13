@@ -2,7 +2,7 @@
 terraform {
   backend "s3" {
     bucket = "terraform-tfstate-clarotvmais"
-    #dynamodb_table = "terraform-state-lock-dynamo-lab-infra"          # Set table if you want to manage lock for yor operations in Terraform.
+    dynamodb_table = "terraform-tfstate-clarotvmais"          # Set table if you want to manage lock for yor operations in Terraform.
     key     = "updateTvChannelsIsFreeStatus/updateTvChannelsIsFreeStatus.tfstate" # Caso tenha mais de um workspace o arquivo sera armazenado na pasta do workspace que sera criada nesta mesma.
     region  = "sa-east-1"
     encrypt = true
@@ -26,7 +26,7 @@ resource "aws_dynamodb_table" "dynamo-db-terraform-state-lock" {
   }
 
   tags = {
-    Name = "DynamoDB Terraform State Lock table"
+    Name = "Terraform State Lock table updateTvChannelsIsFreeStatus lambda"
   }
 
 }

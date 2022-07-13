@@ -11,7 +11,9 @@ Sempre executar operações usando arquivo de variaveis, cada arquivo esta descr
 <br>
 Cuidado com operações de destroy, seja cauteloso no uso.
 <br>
-É necessario entrar com os valores de AWS profile e function version quando usar plan apply ou outro comando que interaja na conta AWS, etas variaveis não tem valores explicitos em arquivos estes valores devem ser apresentados na execução dos modulos, abaixo mais detalhes sobre estas variaveis.
+É necessario entrar com os valores de AWS profile e function version quando usar plan apply ou outro comando que interaja na conta AWS, estas variaveis não tem valores explicitos em arquivos estes valores devem ser apresentados na execução dos modulos, abaixo mais detalhes sobre estas variaveis.
+<br>
+É necessario que localmente tenha configurado os profiles AWS para contas dev-now prd-now.
 
 ## Lambda function updateTvChannelsIsFreeStatus
 
