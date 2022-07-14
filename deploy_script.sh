@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Example of execution:
-#                               Argumentos: aws profile / function name / git branch / nodejs version / aws region / alias
+#                               Argumentos: aws profile / function name / git branch / nodejs version / aws region / alias   o >> e o arquivo subsequente é apenas para salçvar a execucao em um arquivo.
 # ./deploy_script.sh dev-now updateTvChannelsIsFreeStatus develop 14 us-east-1 stg >> deploy-log.txt
 # Git clone vai solicitar usuario e senha.
 
